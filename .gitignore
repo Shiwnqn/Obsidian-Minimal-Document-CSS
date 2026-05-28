@@ -4,6 +4,7 @@
 # Keep repository metadata files
 !.gitignore
 !README.md
+!README.en.md
 !LICENSE
 
 # Keep project files
