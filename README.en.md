@@ -37,6 +37,24 @@ Instead of relying on colorful decoration, it focuses on structure, calmness, an
 - Knowledge management vaults
 - Users who like Minimal's palette but want a more document-oriented layout
 
+## Preview
+
+### Editor Mode
+
+![Editor Mode 1](./assets/pic01.png)
+![Editor Mode 2](./assets/pic02.png)
+![Editor Mode 3](./assets/pic03.png)
+![Editor Mode 4](./assets/pic04.png)
+![Editor Mode 5](./assets/pic05.png)
+
+### Reading Mode
+
+![Reading Mode 1](./assets/read01.png)
+![Reading Mode 2](./assets/read02.png)
+![Reading Mode 3](./assets/read03.png)
+![Reading Mode 4](./assets/read04.png)
+![Reading Mode 5](./assets/read05.png)
+
 ## Project Structure
 
 ```text
@@ -44,6 +62,8 @@ Instead of relying on colorful decoration, it focuses on structure, calmness, an
 ├─ README.md
 ├─ README.en.md
 ├─ LICENSE
+├─ assets/
+│  └─ *.png
 └─ snippets/
    └─ minimal-document.css
 ```
@@ -67,6 +87,7 @@ This repository only keeps files directly related to the snippet itself:
 
 - `README.md`
 - `README.en.md`
+- `assets/*.png`
 - `LICENSE`
 - `snippets/minimal-document.css`
 

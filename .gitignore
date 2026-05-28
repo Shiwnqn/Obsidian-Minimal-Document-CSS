@@ -13,6 +13,7 @@
 !assets/
 assets/*
 !assets/README.md
+!assets/*.png
 !snippets/
 snippets/*
 !snippets/minimal-document.css
