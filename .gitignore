@@ -6,9 +6,13 @@
 !README.md
 !README.en.md
 !preview.md
+!preview-showcase.md
 !LICENSE
 
 # Keep project files
+!assets/
+assets/*
+!assets/README.md
 !snippets/
 snippets/*
 !snippets/minimal-document.css
