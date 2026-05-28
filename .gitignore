@@ -1,0 +1,12 @@
+# Ignore everything by default
+*
+
+# Keep repository metadata files
+!.gitignore
+!README.md
+!LICENSE
+
+# Keep project files
+!snippets/
+snippets/*
+!snippets/minimal-document.css

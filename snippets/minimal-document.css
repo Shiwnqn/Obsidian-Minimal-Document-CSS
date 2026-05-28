@@ -1,0 +1,573 @@
+/* Minimal Clarity
+   借用 Minimal 的灰阶和蓝灰 accent 配色，
+   在默认主题上增强层次和区分感。 */
+
+.theme-light {
+  --base-h: 0;
+  --base-s: 0%;
+  --base-l: 96%;
+  --accent-h: 201;
+  --accent-s: 17%;
+  --accent-l: 50%;
+  --bg1: white;
+  --bg2: hsl(var(--base-h), var(--base-s), var(--base-l));
+  --bg3: hsla(var(--base-h), var(--base-s), calc(var(--base-l) - 50%), 0.12);
+  --ui1: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 6%));
+  --ui2: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 12%));
+  --ui3: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 20%));
+  --tx1: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 90%));
+  --tx2: hsl(var(--base-h), calc(var(--base-s) - 20%), calc(var(--base-l) - 50%));
+  --tx3: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) - 25%));
+  --tx4: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) - 60%));
+  --ax1: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --ax2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 8%));
+  --ax3: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 6%));
+  --background-primary: var(--bg1);
+  --background-primary-alt: var(--bg2);
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: var(--bg1);
+  --background-modifier-hover: var(--bg3);
+  --background-modifier-active-hover: var(--bg3);
+  --background-modifier-border: var(--ui1);
+  --background-modifier-border-hover: var(--ui2);
+  --text-normal: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-faint: var(--tx3);
+  --interactive-accent: var(--ax3);
+  --interactive-accent-hover: var(--ax1);
+  --text-accent: var(--ax1);
+  --inline-title-color: var(--tx1);
+  --titlebar-background-focused: var(--bg2);
+  --tab-text-color-focused-active: var(--tx1);
+  --tab-container-background: var(--bg2);
+  --code-background: var(--bg2);
+  --blockquote-background-color: var(--bg2);
+  --checkbox-color: var(--ax3);
+  --shadow-s: 0 1px 2px rgba(25, 31, 38, 0.05);
+  --mc-surface-1: color-mix(in srgb, var(--bg2) 92%, var(--bg1));
+  --mc-surface-2: color-mix(in srgb, var(--ui1) 55%, var(--bg1));
+  --mc-surface-3: color-mix(in srgb, var(--ax1) 10%, var(--bg1));
+  --mc-accent-soft: color-mix(in srgb, var(--ax1) 14%, transparent);
+  --mc-accent-line: color-mix(in srgb, var(--ax1) 58%, var(--ui2));
+}
+
+.theme-dark {
+  --base-h: 0;
+  --base-s: 0%;
+  --base-l: 15%;
+  --accent-h: 201;
+  --accent-s: 17%;
+  --accent-l: 60%;
+  --bg1: hsl(var(--base-h), var(--base-s), var(--base-l));
+  --bg2: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 2%));
+  --bg3: hsla(var(--base-h), var(--base-s), calc(var(--base-l) + 40%), 0.12);
+  --ui1: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 6%));
+  --ui2: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 12%));
+  --ui3: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 20%));
+  --tx1: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) + 67%));
+  --tx2: hsl(var(--base-h), calc(var(--base-s) - 20%), calc(var(--base-l) + 45%));
+  --tx3: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) + 20%));
+  --tx4: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) + 50%));
+  --ax1: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --ax2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 8%));
+  --ax3: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 6%));
+  --background-primary: var(--bg1);
+  --background-primary-alt: var(--bg2);
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: var(--bg1);
+  --background-modifier-hover: var(--bg3);
+  --background-modifier-active-hover: var(--bg3);
+  --background-modifier-border: var(--ui1);
+  --background-modifier-border-hover: var(--ui2);
+  --text-normal: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-faint: var(--tx3);
+  --interactive-accent: var(--ax3);
+  --interactive-accent-hover: var(--ax1);
+  --text-accent: var(--ax1);
+  --inline-title-color: var(--tx1);
+  --titlebar-background-focused: var(--bg2);
+  --tab-text-color-focused-active: var(--tx1);
+  --tab-container-background: var(--bg2);
+  --code-background: var(--bg2);
+  --blockquote-background-color: var(--bg2);
+  --checkbox-color: var(--ax3);
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.22);
+  --mc-surface-1: color-mix(in srgb, var(--bg2) 88%, var(--bg1));
+  --mc-surface-2: color-mix(in srgb, var(--ui1) 58%, var(--bg1));
+  --mc-surface-3: color-mix(in srgb, var(--ax1) 12%, var(--bg1));
+  --mc-accent-soft: color-mix(in srgb, var(--ax1) 18%, transparent);
+  --mc-accent-line: color-mix(in srgb, var(--ax1) 62%, var(--ui2));
+}
+
+body {
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 14px;
+  --input-radius: 10px;
+  --tab-radius-active: 10px;
+  --tab-outline-width: 1px;
+  --metadata-label-width: 9rem;
+  --line-height-normal: 1.75;
+  --line-height-tight: 1.6;
+  --p-spacing: 1.28rem;
+  --line-width: 42rem;
+  --file-margins: 2.8rem;
+  --mc-doc-serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+}
+
+/* 让左右侧边栏与正文有更明确的分区 */
+.workspace-sidedock-vault-profile,
+.workspace-sidedock,
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background: var(--background-secondary);
+}
+
+.workspace-leaf,
+.workspace-leaf-content,
+.workspace-tabs .workspace-tab-container {
+  border-color: var(--background-modifier-border);
+}
+
+.workspace-leaf-content[data-type="markdown"] {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--background-primary) 82%, var(--mc-surface-1)), var(--background-primary) 18rem),
+    linear-gradient(90deg, color-mix(in srgb, var(--mc-surface-3) 18%, transparent), transparent 16rem);
+}
+
+.markdown-rendered p,
+.markdown-source-view.mod-cm6 .cm-line {
+  line-height: var(--line-height-normal);
+}
+
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+.markdown-preview-view .markdown-preview-sizer,
+.markdown-source-view.mod-cm6 .cm-contentContainer {
+  padding-bottom: 6rem;
+}
+
+.markdown-rendered p {
+  margin-top: 0;
+  margin-bottom: var(--p-spacing);
+}
+
+.markdown-rendered li,
+.markdown-rendered blockquote p,
+.markdown-rendered .callout-content,
+.markdown-rendered td,
+.markdown-rendered th {
+  line-height: var(--line-height-tight);
+}
+
+/* 标签页更简洁，但活动状态更明显 */
+.workspace-tab-header-container {
+  background: var(--tab-container-background);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.workspace-tab-header {
+  margin: 6px 4px 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.workspace-tab-header:hover {
+  background: var(--background-modifier-hover);
+  transform: translateY(-1px);
+}
+
+.workspace-tab-header.is-active {
+  background: var(--background-primary);
+  border-color: var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+
+/* 文件列表、搜索结果、设置项更清晰 */
+.nav-file-title,
+.nav-folder-title,
+.suggestion-item,
+.setting-item {
+  border-radius: 8px;
+  transition: background-color 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+.suggestion-item.is-selected {
+  background: var(--background-primary);
+  color: var(--text-normal);
+  box-shadow: inset 0 0 0 1px var(--background-modifier-border);
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.suggestion-item:hover {
+  background: color-mix(in srgb, var(--background-primary) 76%, var(--mc-surface-3));
+}
+
+.setting-item {
+  border-top-color: var(--background-modifier-border);
+}
+
+/* 输入框和搜索框更统一 */
+.search-input,
+input[type="text"],
+input[type="search"],
+textarea {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.search-input:focus,
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--interactive-accent) 18%, transparent);
+}
+
+/* 正文区域：保留简约感，增强标题和内容块层次 */
+.inline-title {
+  font-family: var(--mc-doc-serif);
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  font-size: 1.8rem;
+  line-height: 1.35;
+  padding: 0.4rem 0 0.9rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4 {
+  color: var(--text-normal);
+}
+
+.markdown-rendered h1 {
+  font-family: var(--mc-doc-serif);
+  font-size: 2.05em;
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: 0.03em;
+  background: transparent;
+  border-left: none;
+  border-bottom: 1px solid var(--background-modifier-border-hover);
+  padding: 0 0 0.6rem;
+  border-radius: 0;
+  margin: 2.1em 0 1.1em;
+  box-shadow: none;
+}
+
+.markdown-rendered h2 {
+  font-family: var(--mc-doc-serif);
+  font-size: 1.45em;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 0 0 0.45rem;
+  border-radius: 0;
+  margin: 1.9em 0 0.95em;
+  box-shadow: none;
+}
+
+.markdown-rendered h3 {
+  font-size: 1.08em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding-left: 0;
+  border-left: none;
+  margin: 1.55em 0 0.8em;
+}
+
+.markdown-rendered h4 {
+  display: inline-block;
+  font-size: 0.92em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.14rem 0.4rem 0.14rem 0;
+  background: transparent;
+  border-radius: 0;
+  margin: 1.2em 0 0.7em;
+  border: none;
+  color: var(--text-muted);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+}
+
+.markdown-rendered h1,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
+  letter-spacing: 0.01em;
+}
+
+.markdown-rendered h2,
+.markdown-rendered h3 {
+  margin-top: 1.6em;
+}
+
+.markdown-rendered hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--background-modifier-border), var(--background-modifier-border-hover), var(--background-modifier-border), transparent);
+  margin: 2.4rem 0;
+}
+
+/* 引用、callout、代码块、表格都用同色系表面区分 */
+.markdown-rendered blockquote,
+.callout {
+  background: var(--mc-surface-1);
+  border: 1px solid var(--background-modifier-border);
+  border-left: 2px solid var(--mc-accent-line);
+  border-radius: 10px;
+  box-shadow: none;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  padding-right: 1rem;
+}
+
+.markdown-rendered pre,
+.markdown-source-view.mod-cm6 .cm-preview-code-block,
+.markdown-rendered table {
+  background: var(--mc-surface-1);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.markdown-rendered pre {
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--background-modifier-border-hover);
+}
+
+.markdown-rendered code,
+.cm-s-obsidian span.cm-inline-code {
+  background: var(--mc-surface-2);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 0.15em 0.35em;
+  font-size: 0.92em;
+}
+
+.markdown-rendered table {
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.4rem 0;
+}
+
+.markdown-rendered thead tr,
+.markdown-source-view.mod-cm6 table thead tr {
+  background: var(--mc-surface-2);
+}
+
+.markdown-rendered td,
+.markdown-rendered th {
+  border-color: var(--background-modifier-border);
+  padding: 0.7rem 0.85rem;
+}
+
+.markdown-rendered th {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 0.84em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.markdown-rendered tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--mc-surface-1) 92%, var(--background-primary));
+}
+
+.markdown-rendered tbody tr:hover {
+  background: var(--mc-accent-soft);
+}
+
+.markdown-rendered tbody tr:hover > td,
+.markdown-rendered tbody tr:hover > th {
+  background: var(--mc-accent-soft);
+}
+
+.markdown-rendered td:first-child,
+.markdown-rendered th:first-child {
+  border-left: 3px solid transparent;
+}
+
+.markdown-rendered tbody tr:hover td:first-child {
+  border-left-color: var(--mc-accent-line);
+}
+
+/* 列表和任务项保留干净观感，同时提升可读性 */
+.markdown-rendered ul,
+.markdown-rendered ol {
+  padding-left: 1.35rem;
+}
+
+.markdown-rendered ul ul,
+.markdown-rendered ol ol,
+.markdown-rendered ul ol,
+.markdown-rendered ol ul {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+  border-left: 1px dashed var(--background-modifier-border);
+  padding-left: 1.15rem;
+}
+
+.markdown-rendered ul > li,
+.markdown-rendered ol > li {
+  margin: 0.3rem 0;
+}
+
+.markdown-rendered ul > li:not(.task-list-item) {
+  list-style: none;
+  position: relative;
+  padding-left: 0.55rem;
+}
+
+.markdown-rendered ul > li:not(.task-list-item)::before {
+  content: "";
+  position: absolute;
+  left: -0.95rem;
+  top: 0.72em;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: var(--mc-accent-line);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mc-accent-soft) 72%, transparent);
+}
+
+.markdown-rendered ol {
+  counter-reset: mc-ordered;
+}
+
+.markdown-rendered ol > li:not(.task-list-item) {
+  list-style: none;
+  position: relative;
+  padding-left: 2.2rem;
+  counter-increment: mc-ordered;
+}
+
+.markdown-rendered ol > li:not(.task-list-item)::before {
+  content: counter(mc-ordered);
+  position: absolute;
+  left: -0.1rem;
+  top: 0.05rem;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.18rem;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-muted);
+  font-size: 0.78em;
+  font-weight: 700;
+  line-height: 1.35rem;
+  text-align: center;
+}
+
+.markdown-rendered .task-list-item {
+  list-style: none;
+  margin-left: -0.2rem;
+  padding: 0.38rem 0.7rem 0.38rem 0.4rem;
+  background: color-mix(in srgb, var(--mc-surface-1) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 90%, transparent);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.markdown-rendered .task-list-item + .task-list-item {
+  margin-top: 0.35rem;
+}
+
+.markdown-rendered li.task-list-item.is-checked {
+  opacity: 0.82;
+}
+
+.markdown-rendered strong {
+  color: var(--text-normal);
+  background: linear-gradient(180deg, transparent 60%, color-mix(in srgb, var(--mc-accent-soft) 72%, transparent) 60%);
+  font-weight: 700;
+}
+
+.markdown-rendered em {
+  color: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
+}
+
+.markdown-rendered mark {
+  background: color-mix(in srgb, var(--ax1) 18%, var(--background-primary));
+  color: var(--text-normal);
+  padding: 0.05em 0.2em;
+  border-radius: 4px;
+}
+
+.markdown-rendered a {
+  color: var(--text-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--text-accent) 40%, transparent);
+}
+
+.markdown-rendered blockquote p:last-child,
+.callout-content > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-rendered img,
+.markdown-rendered .internal-embed img {
+  border-radius: 12px;
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: none;
+}
+
+.markdown-embed,
+.file-embed {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.tag,
+.cm-hashtag {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 86%, transparent);
+  border-radius: 999px;
+  padding: 0.05em 0.5em;
+  color: var(--text-muted);
+}
+
+input[type="checkbox"] {
+  border-width: 1.5px;
+  border-color: var(--background-modifier-border-hover);
+  border-radius: 5px;
+  background: var(--background-primary);
+}
+
+/* 右上角功能按钮和状态栏更低调统一 */
+.clickable-icon:hover,
+.side-dock-actions .clickable-icon:hover,
+.titlebar-button:hover {
+  background: var(--background-modifier-hover);
+  border-radius: 8px;
+}
+
+.status-bar {
+  border-top: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+}
