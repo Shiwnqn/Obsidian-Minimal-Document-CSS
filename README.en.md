@@ -39,16 +39,6 @@ Instead of relying on colorful decoration, it focuses on structure, calmness, an
 
 ## Preview
 
-### Editor Mode
-
-![Editor Mode 1](./assets/pic01.png)
-![Editor Mode 2](./assets/pic02.png)
-![Editor Mode 3](./assets/pic03.png)
-![Editor Mode 4](./assets/pic04.png)
-![Editor Mode 5](./assets/pic05.png)
-
-### Reading Mode
-
 ![Reading Mode 1](./assets/read01.png)
 ![Reading Mode 2](./assets/read02.png)
 ![Reading Mode 3](./assets/read03.png)
