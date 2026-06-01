@@ -114,6 +114,8 @@ body {
   --line-width: 42rem;
   --file-margins: 2.8rem;
   --mc-doc-serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+  --mc-table-index-width: 4rem;
+  --mc-table-column-width: 13rem;
 }
 
 /* 让左右侧边栏与正文有更明确的分区 */
@@ -369,6 +371,15 @@ textarea:focus {
   overflow: hidden;
   border-collapse: separate;
   border-spacing: 0;
+  margin: 0;
+  table-layout: fixed;
+  width: max-content;
+  min-width: 100%;
+}
+
+.markdown-rendered .table-wrapper,
+.markdown-source-view.mod-cm6 .table-wrapper {
+  overflow-x: auto;
   margin: 1.4rem 0;
 }
 
@@ -381,6 +392,27 @@ textarea:focus {
 .markdown-rendered th {
   border-color: var(--background-modifier-border);
   padding: 0.7rem 0.85rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  vertical-align: top;
+}
+
+.markdown-rendered td:first-child,
+.markdown-rendered th:first-child,
+.markdown-source-view.mod-cm6 table td:first-child,
+.markdown-source-view.mod-cm6 table th:first-child {
+  width: var(--mc-table-index-width);
+  min-width: var(--mc-table-index-width);
+  text-align: center;
+}
+
+.markdown-rendered td:nth-child(n + 2),
+.markdown-rendered th:nth-child(n + 2),
+.markdown-source-view.mod-cm6 table td:nth-child(n + 2),
+.markdown-source-view.mod-cm6 table th:nth-child(n + 2) {
+  width: var(--mc-table-column-width);
+  min-width: var(--mc-table-column-width);
 }
 
 .markdown-rendered th {
